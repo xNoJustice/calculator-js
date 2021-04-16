@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Calculator JS</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <form class="mx-auto" style="width: 400px; margin-top: 20%">
+        <table>
+          <thead>
+            <tr>
+              <td colspan="5"><span id="before" class="text-white"></span></td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="main"
+                  name="main"
+                  value=""
+                  readonly="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5"><span id="memory" class="text-white"></span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="Back"
+                  onclick="back()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="CE"
+                  onclick="back()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-danger text-white"
+                  type="button"
+                  value="AC"
+                  onclick="clear2()"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="MC"
+                  onclick="mclear()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="√√"
+                  onclick="square2()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="x²"
+                  onclick="square()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="%"
+                  onclick="percent()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="1/x"
+                  onclick="reverse()"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="MR"
+                  onclick="mcome()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="7"
+                  onclick="numkey(7)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="8"
+                  onclick="numkey(8)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="9"
+                  onclick="numkey(9)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="÷"
+                  onclick="operation('/')"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="MS"
+                  onclick="msave()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="4"
+                  onclick="numkey(4)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="5"
+                  onclick="numkey(5)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="6"
+                  onclick="numkey(6)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="x"
+                  onclick="operation('x')"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="M+"
+                  onclick="madd()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="1"
+                  onclick="numkey(1)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="2"
+                  onclick="numkey(2)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="3"
+                  onclick="numkey(3)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="-"
+                  onclick="operation('-')"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="M-"
+                  onclick="mremove()"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-primary text-white"
+                  type="button"
+                  value="0"
+                  onclick="numkey(0)"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="."
+                  onclick="operation('.')"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="+/-"
+                  onclick="operation('+-')"
+                />
+              </td>
+              <td>
+                <input
+                  class="form-control bg-dark text-white"
+                  type="button"
+                  value="+"
+                  onclick="operation('+')"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <input
+                  class="form-control bg-warning text-dark"
+                  type="button"
+                  value="="
+                  onclick="calculate()"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+    </div>
+  </body>
+</html>
